@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
+{% extends "navbar.html" %}
+{% block content %}
+  <div class="jumbotron text-center">
+    <h1>Restaurant Finder</h1>
+    <div class = "row">
+      <div class = "col-sm-2 col-sm-offset-5">
+        <form role="form" method = "post">
+            <select name = "city" id="city" onchange="this.form.submit()" class="selectpicker">
+              <option selected>Select a city...</option>
+              <option value="San Francisco" id="sf"> San Francisco</option>
+              <option value="San Jose" id="sj"> San Jose</option>
+              <option value="Las Vegas" id="lv"> Las Vegas</option>
+              <option value="Los Angeles" id="la"> Los Angeles</option>
+            </select> <br>
 
-</body>
-</html>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="container-fluid text-center bg-grey my-hide" id="sfPic">
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <p><strong>b. Patisserie</strong></p>
+          <img src="../static/Patisserie.jpg" alt="Paris">
+
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <p><strong>Sugarfoot</strong></p>
+          <img src="../static/Sugarfoot.jpg" alt="Paris">
+
+
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <p><strong>Frances</strong></p>
+          <img src="../static/Frances.jpg" alt="Paris">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
