@@ -2,37 +2,124 @@
 {% block content %}
   <div class="jumbotron text-center">
     <h1>Restaurant Finder</h1>
-    <div class = "row">
-      <div class = "col-sm-2 col-sm-offset-5">
-        <form role="form" method = "post">
-            <select name = "city" id="city" onchange="this.form.submit()" class="selectpicker">
-              <option selected>Select a city...</option>
-              <option value="San Francisco" id="sf"> San Francisco</option>
-              <option value="San Jose" id="sj"> San Jose</option>
-              <option value="Las Vegas" id="lv"> Las Vegas</option>
-              <option value="Los Angeles" id="la"> Los Angeles</option>
-            </select> <br>
+    <div class="row">
+      <div class="col-sm-2 col-sm-offset-5">
+        <form role="form" method="post">
+          {#          <select name="city" id="city" onchange="this.form.submit()" class="selectpicker">#}
+          <select name="city" id="city" class="selectpicker">
+            <option selected>Select a city...</option>
+            <option value="San Francisco" id="sf"> San Francisco</option>
+            <option value="San Jose" id="sj"> San Jose</option>
+            <option value="Las Vegas" id="lv"> Las Vegas</option>
+            <option value="Los Angeles" id="la"> Los Angeles</option>
+          </select> <br>
 
-          </form>
-        </div>
+        </form>
       </div>
     </div>
-
+  </div>
 
   <div class="container-fluid text-center bg-grey my-hide" id="sfPic">
     <div class="row text-center">
       <div class="col-sm-4">
         <div class="thumbnail">
-          <p><strong>b. Patisserie</strong></p>
-          <img src="../static/Patisserie.jpg" alt="Paris">
+          <p><strong>SF1</strong></p>
+          <img src="../static/image/Frances.jpg" alt="Paris">
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <p><strong>SF2</strong></p>
+          <img src="../static/image/Patisserie.jpg" alt="Paris">
+
+
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <p><strong>SF3</strong></p>
+          <img src="../static/image/Sugarfoot.jpg" alt="Paris">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid text-center bg-grey my-hide" id="sjPic">
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+
+          <p><strong>SJ1</strong></p>
+          <img src="../static/image/Frances.jpg" alt="Paris">
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+
+          <p><strong>SJ2</strong></p>
+          <img src="../static/image/Patisserie.jpg" alt="Paris">
+
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="thumbnail">
+
+          <p><strong>SJ3</strong></p>
+          <img src="../static/image/Sugarfoot.jpg" alt="Paris">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid text-center bg-grey my-hide" id="lvPic">
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <p><strong>LV3</strong></p>
+          <img src="../static/image/Sugarfoot.jpg" alt="Paris">
 
 
         </div>
       </div>
       <div class="col-sm-4">
         <div class="thumbnail">
-          <p><strong>Sugarfoot</strong></p>
-          <img src="../static/Sugarfoot.jpg" alt="Paris">
+          <p><strong>LV1</strong></p>
+          <img src="../static/image/Frances.jpg" alt="Paris">
+
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <p><strong>LV2</strong></p>
+          <img src="../static/image/Patisserie.jpg" alt="Paris">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid text-center bg-grey my-hide" id="laPic">
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <p><strong>LA1</strong></p>
+          <img src="../static/image/Frances.jpg" alt="Paris">
+
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <p><strong>LA2</strong></p>
+          <img src="../static/image/Patisserie.jpg" alt="Paris">
 
 
         </div>
@@ -40,10 +127,8 @@
 
       <div class="col-sm-4">
         <div class="thumbnail">
-          <p><strong>Frances</strong></p>
-          <img src="../static/Frances.jpg" alt="Paris">
-
-
+          <p><strong>LA3</strong></p>
+          <img src="../static/image/Sugarfoot.jpg" alt="Paris">
         </div>
       </div>
     </div>

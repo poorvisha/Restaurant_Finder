@@ -69,9 +69,9 @@ padding: 80px 50px;
     text-decoration: none;
     opacity: 1;
 }
-.my-display1{
+.my-display{
     display: inherit;
 }
-.my-hide1{
+.my-hide{
     display: none;
 }
