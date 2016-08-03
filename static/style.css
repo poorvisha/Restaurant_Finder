@@ -6,13 +6,13 @@ background-size: cover;
 padding-bottom: 400px;
 font-family : verdana;
 word-spacing: 3px;
-
-
 }
+
 .container-fluid {
     padding: 60px 50px;
 	font-size : 20px
 }
+
 .team {
 padding: 80px 50px;
 }
@@ -28,6 +28,7 @@ padding: 80px 50px;
     height: 100%;
     margin-bottom: 10px;
 }
+
 .cities{
   padding-bottom: 150px;
 }
