@@ -11,6 +11,8 @@ $(document).ready(function() {
   var laPic = $('#laPic');
   
   city.change(function() {
+//    city_selector.submit();
+//    return;
     var value = $(this).val();
     console.log(value);
     if (value === 'San Francisco') {
