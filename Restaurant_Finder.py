@@ -16,7 +16,7 @@ import pickle
 #db.close()
 
 from flask import *
-from pymongo import MongoClient
+#from pymongo import MongoClient
 
 app = Flask(__name__)
 
@@ -41,6 +41,13 @@ def home():
     except Exception as e:
         print(e)
 
+@app.route('/res')
+def res():
+    return render_template('res.html')
+
+@app.route('/menu')
+def menu():
+    return render_template('menu.html')
 
 # Remove the "debug=True" for production
 if __name__ == '__main__':
@@ -48,4 +55,3 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
 
     app.run(host='localhost', port=port, debug=True)
-sz

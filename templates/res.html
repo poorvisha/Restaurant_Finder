@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+  <title>resturant page</title>
+  <meta charset="utf-8">
+
+  <style>
+body {
+    background-color: black; /* Orange */
+    color:white;
+}
+
+
+ .links
+ {
+
+     font-family:cursive;
+     background-color: coral;
+     border-top-left-radius: 40px;
+     border-bottom-right-radius: 40px;
+     padding :5px;
+ }
+
+
+
+ .container
+ {
+    position: relative;
+ }
+
+.bottomleft
+{
+    border-radius: 100%;
+    text-align: center;
+    background-color: bisque;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 22px;
+    color:coral;
+    padding: 10px;
+    font-family:cursive;
+    border: dotted black;
+}
+
+  .topright
+  {
+        background-color:bisque;
+        position: absolute;
+        top: 100px;
+        right: 16px;
+        font-size: 22px;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        text-align: center;
+        color:coral;
+        padding:10px;
+      border: dotted black;
+
+
+  }
+
+ img
+ {
+    width: 100%;
+
+
+ }
+
+
+
+</style>
+
+</head>
+<body>
+        <h1 class="links">
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{ name }}
+
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/" style="font-size:20px ; text-align:right"> HOME</a> &nbsp;&nbsp;
+        <a href= '/menu' style="font-size:20px;text-align:right"> MENU</a>
+        </h1>
+
+    <div class="container">
+    <img src="/static/RestuarntMenimages/res1.jpg" alt="Norway" width="1000" height="550">
+    <div class="bottomleft"><u> Address: </u>
+        <%
+            if
+        %><br> 1208 S Abel St, Milpitas, <br>CA 95035</div>
+    <div class="topright">Timings:<br> 9 a.m to 10 p.m <br> weekends : 10 a.m to 12 p.m  </div>
+
+    </div>
+
+</body>
+</html>

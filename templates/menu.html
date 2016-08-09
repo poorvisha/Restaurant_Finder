@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Menu page Of Resturant </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+
+            body {
+                    color:white;
+                 }
+
+                 .links
+                {
+                     width: 100%;
+                     font-size: 40px;
+                     text-align:center;
+                     font-family:cursive;
+                     background-color: coral;
+                     border-top-left-radius: 40px;
+                     border-bottom-right-radius: 40px;
+                     padding :5px;
+                 }
+
+                 #container
+                {
+                    height:500px;
+                    width:100%;
+                    position:relative;
+                    top:90px;
+                    left: 5%;
+
+                 }
+
+                .image
+                {
+                    height:500px;
+                    width:550px;
+                    position:absolute;
+
+                }
+
+                .left-holder
+                {
+                    height:500px;
+                    width:100px;
+                    position:absolute;
+                    top:0px;
+                    left:0px;
+
+                 }
+
+                .right-holder
+                {
+                    height:500px;
+                    width:100px;
+                    position:absolute;
+                    top:0px;
+                    right:0px;
+
+                }
+                    .Ltarrow
+                {
+                    width:20px;
+                    height:20px;
+                    position:absolute;
+                    top:55%;
+                    left:0px;
+
+                }
+
+                    .Rtarrow
+                {
+                     width:20px;
+                    height:20px;
+                    position:absolute;
+                    top:55%;
+                    left:-790px;
+                    }
+            a
+            {
+                position:absolute;
+                right:100px;
+                font-size: 30px;
+            }
+
+            .tablePosition
+            {
+                position: absolute;
+                top:25%;
+                left:50%;
+            }
+
+            .cartPosition
+            {
+                position:absolute;
+                top:18%;
+                left:90%;
+
+            }
+
+            td
+            {
+                text-align:center;
+            }
+
+
+
+        </style>
+
+    </head>
+
+    <body onLoad="slidepic()">
+        <div class="links" >
+            Menu
+            <a href="/" > Home</a>
+
+        </div>
+
+
+        <div id="container">
+            <img src="/static/RestuarntMenimages/item1.jpg" id ="picture" class="image" width="700" height="500">
+            <div class="left-holder"><img src="/static/RestuarntMenimages/leftArrow.jpg" class="Ltarrow" onClick="slide(-1)" ></div>
+            <div class="right-holder"><img src="/static/RestuarntMenimages/rightArrow.jpg" class="Rtarrow" onClick="slide(1)"></div>
+        </div>
+
+        <img src="/static/RestuarntMenimages/cart.jpeg" width="50" height="50" class="cartPosition" >
+
+        <form    name="myForm" class="box-3"  method="POST" action="" >
+
+            <table class="tablePosition" style="font-size:15pt" border=2 bgcolor="coral" width="45%" height="500px">
+
+                <tr  height="50px">
+                    <th>CATEGORY</th>
+                    <th>UNIT PRICE</th>
+                    <th>QUANTITY</th>
+
+                </tr>
+
+                <tr height="50px">
+                    <td > <input type="checkbox" name="Birayani" >Birayani</td>
+                    <td>20$ </td>
+                    <td><input  name="quantity" type="number"> </td>
+                </tr >
+
+                <tr height="50px">
+                    <td > <input type="checkbox" name="noddles" >noodles</td>
+                    <td>10$ </td>
+                    <td><input  name="quantity" type="number"> </td>
+                </tr >
+
+                <tr height="50px">
+                    <td > <input type="checkbox" name="desert" >desert</td>
+                    <td>15$ </td>
+                    <td><input  name="quantity" type="number"> </td>
+                </tr >
+
+                <tr height="50px">
+                    <td > <input type="checkbox" name="milkshakes" >milkshakes</td>
+                    <td>15$ </td>
+                    <td><input  name="quantity" type="number"> </td>
+                </tr >
+
+                 <tr height="50px">
+                     <td colspan="3">
+                         <input type="SUBMIT" name="ADD TO CART"  value="ADD TO CART" style="background-color:blue; color:yellow;font-size:10pt ; padding:3px;">&nbsp; &nbsp;
+                         <input type="reset" name="reset" id="reset button" value="RESET" style="background-color:blue; color:yellow; font-size:10pt; padding:3px;">
+                     </td>
+                </tr>
+            </table>
+     </form>
+    </body>
+</html>
