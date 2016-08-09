@@ -1,22 +1,24 @@
 import os
-import pickle
-#import MySQLdb
-
-#db = mySQLdb.connect(host = "localhost",
-#                     user="root",
-#                     passwd="funpingx2",
-#                     db= "rest_finder")
-
-#cur = db.cursor()
-#cur.execute("select * from restaurant_detail where city_name='san francisco'")
-
-#for row in cur.fetchall():
-#    print row[0]
-
-#db.close()
-
 from flask import *
+from flask import Flask, render_template
+import pymysql.cursors
 #from pymongo import MongoClient
+
+app = Flask(__name__)
+
+#mysql = PyMySQL()
+
+# MySQL configurations
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'welcome'
+app.config['MYSQL_DATABASE_DB'] = 'restaurant_finder'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+
+
+conn = pymysql.connect(host='localhost', user='root', password='welcome',db='restaurant_finder')
+
+cur= conn.cursor()
+
 
 app = Flask(__name__)
 
