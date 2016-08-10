@@ -43,17 +43,20 @@ def home():
     except Exception as e:
         print(e)
 
-@app.route('/res/<resname>')
-def res(resname):
-    print(resname)
-    cur.execute("select  * from restaurant_detail where restaurant_name = '%s'" % resname)
+@app.route('/res/<int:resid>')
+def res(resid):
+    print(resid)
+    cur.execute("select  * from restaurant_detail where rest_id = '%d'" % resid)
     rows = cur.fetchone();
     print(rows)
-    return render_template('res.html',name = resname , details = rows)
+    return render_template('res.html', ids = resid ,details = rows)
 
-@app.route('/menu')
-def menu():
-    return render_template('menu.html')
+@app.route('/menu/<int:resid>')
+def menu(resid):
+    cur.execute("select  * from restaurant_menu_detail where rest_id = '%d'" % resid)
+    itemRows = cur.fetchall();
+    print(itemRows)
+    return render_template('menu.html',ids  = resid ,items = itemRows)
 
 # Remove the "debug=True" for production
 if __name__ == '__main__':

@@ -136,30 +136,18 @@
                     <th>QUANTITY</th>
 
                 </tr>
+                {% for i in items %}
 
-                <tr height="50px">
-                    <td > <input type="checkbox" name="Birayani" >Birayani</td>
-                    <td>20$ </td>
-                    <td><input  name="quantity" type="number"> </td>
-                </tr >
+                        <tr height="50px">
+                            <td > <input type="checkbox"  >{{ i[2]}}</td>
+                            <td>{{ i[3]  }}$ </td>
+                            <td><input  name="quantity" type="number"> </td>
+                        </tr >
 
-                <tr height="50px">
-                    <td > <input type="checkbox" name="noddles" >noodles</td>
-                    <td>10$ </td>
-                    <td><input  name="quantity" type="number"> </td>
-                </tr >
 
-                <tr height="50px">
-                    <td > <input type="checkbox" name="desert" >desert</td>
-                    <td>15$ </td>
-                    <td><input  name="quantity" type="number"> </td>
-                </tr >
+                 {% endfor %}
 
-                <tr height="50px">
-                    <td > <input type="checkbox" name="milkshakes" >milkshakes</td>
-                    <td>15$ </td>
-                    <td><input  name="quantity" type="number"> </td>
-                </tr >
+
 
                  <tr height="50px">
                      <td colspan="3">
