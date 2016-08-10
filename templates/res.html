@@ -77,7 +77,7 @@ body {
         <h1 class="links">
             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {{ name }}
+        {{ details[1] }}
 
             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="/" style="font-size:20px ; text-align:right"> HOME</a> &nbsp;&nbsp;
@@ -86,10 +86,13 @@ body {
 
     <div class="container">
     <img src="/static/RestuarntMenimages/res1.jpg" alt="Norway" width="1000" height="550">
-    <div class="bottomleft"><u> Address: </u>
-        <%
-            if
-        %><br> 1208 S Abel St, Milpitas, <br>CA 95035</div>
+    <div class="bottomleft"><u> Address: </u><br>
+
+
+      {{ details[2] }}  , {{ details[4] }} <br> {{ details[5] }} ,{{ details[6] }} <br>
+      <span style="color: green">cell: {{ details[7] }}  <br>Cuisine :{{ details[8] }} </span> <br>
+
+    </div>
     <div class="topright">Timings:<br> 9 a.m to 10 p.m <br> weekends : 10 a.m to 12 p.m  </div>
 
     </div>

@@ -43,9 +43,13 @@ def home():
     except Exception as e:
         print(e)
 
-@app.route('/res')
-def res():
-    return render_template('res.html')
+@app.route('/res/<resname>')
+def res(resname):
+    print(resname)
+    cur.execute("select  * from restaurant_detail where restaurant_name = '%s'" % resname)
+    rows = cur.fetchone();
+    print(rows)
+    return render_template('res.html',name = resname , details = rows)
 
 @app.route('/menu')
 def menu():
