@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery Detail</title>
+    <link href="../static/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/headerfooter.css" rel="stylesheet" type="text/css"/>
+</head>
+<script>
+
+</script>
+<body class="background">
+<div  id="header">
+     <img class="logo" src="../static/Images/FinalHeaderImage.png"  alt="Foodie Logo" align="left">
+</div>
+<form action="addCustomerDetail" method="post" id="formid" class="transbox" style="width:700px;">
+    <div align="center">
+        <h1><b>Delivery Detail </b></h1>
+            <table>
+                <tr>
+                    <td>
+                        <input type="text"  name="fname" id='fname' property="t1" required placeholder="First Name"/>
+                    </td>
+
+                    <td>
+                       <input type="text" name="lname" id='lname' property="t1" required placeholder="Last Name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="email"  required pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$" placeholder="Email"/>
+                    </td>
+                    <td>
+                        <input type="text" name="mobile"  pattern="\d{10}" title="Please enter exactly 10 digits" placeholder="Mobile"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="address1" placeholder="Address 1"/>
+                    </td>
+                    <td>
+                        <input type="text" name="address2" placeholder="Address 2"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="city" id="city" required>
+                            <option selected>Select a city...</option>
+                            <option value="San Francisco" id="sf"> San Francisco</option>
+                            <option value="San Jose" id="sm"> San Jose</option>
+                            <option value="Los Angeles" id="lv"> Los Angeles</option>
+                            <option value="Las Vegas" id="la"> Las Vegas</option>
+                            <option value="Oakland" id="ok"> Oakland</option>
+                            <option value="Sacramento" id="la"> Sacramento</option>
+                            <option value="San Diego" id="sd"> San Diego</option>
+                            <option value="Fresno" id="fr"> Fresno</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" name="state" placeholder="California" disabled/>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <input type="text" name="zip" placeholder="zipcode"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" colspan="2">
+                        <button type="submit" class="btn" style="width:225px;">Place Order</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </form>
+
+</body>
+</html>

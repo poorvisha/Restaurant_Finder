@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add To Cart</title>
+    <link href="../static/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/headerfooter.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+    <script src="../static/jquery-3.1.0.min.js"></script>
+    <script src="../static/jquery-ui.js"></script>
+    <script src="../static/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        $(function() {
+            sum = 0
+            $.ajax({
+                type: 'post',
+                url: 'addToCart',
+                success: function (data) {
+                    var data1 = JSON.parse(data)
+
+                    $('#cartTable').dataTable({
+                        data: data1,
+                        'sort': false,
+                        'searching': false	,
+						'paging': false,
+						'bInfo': false,
+                        stripeClasses:[],
+                        columns: [
+                            {"data": "food_item_name"},
+                            {"data": "price"},
+                            {'data': "quantity"},
+                            {'data': "totalprice"}
+                        ],
+                     });//table
+
+                    $("#cartTable tbody tr").each(function() {
+                        sum += parseFloat($(this).find("td").eq(3).text())
+
+                    });
+                    sum = sum.toFixed(2)
+                    $("#totalprice").text(sum)
+                    $("#totprice").val(sum)
+                } //sucess
+
+           }); //ajax
+
+    });//Main Jquery function
+
+    </script>
+
+
+</head>
+<body class="background">
+<div  id="header">
+     <img class="logo" src="../static/Images/FinalHeaderImage.png" alt="ITU Logo" align="left">
+     </div>
+
+    <form action="showCustomerDetail" method="post" style="width:1000px;" class="transbox">
+        <div  align="center">
+        <h1>Confirm Order</h1>
+        <table  border="1"  name="cartTable" id="cartTable" width="100%">
+            <thead>
+                <tr>
+                    <th width="20%">Food Item</th>
+                    <th width="5%">Unit Price</th>
+                    <th width="5%">Quantity</th>
+                    <th width="5%">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <br/>
+        <div>
+            <h2><Label>Total Amount: </Label>
+            <!--input type="text" id="totalprice" name="totalprice" size="3"-->
+            <label id="totalprice" name="totalprice"></label></h2>
+            <input type="hidden" id="totprice" name="totprice" size="3">
+        </div>
+        <br/>
+        <button type="Submit" class="btn">Confirm</button>
+        </div>
+    </form>
+
+</body>
+</html>

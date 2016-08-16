@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+
+    <link href="../static/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/headerfooter.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+
+    <script src="../static/jquery-3.1.0.min.js"></script>
+    <script src="../static/jquery.dataTables.min.js"></script>
+    <script src="../static/jquery-ui.js"></script>
+
+    <script>
+
+    $(function() {
+       $.ajax({
+           type: 'GET',
+           url: 'restaurant_Menu',
+           //data: {restid: 1},  //Need to get the rest id from the query String
+           success: function (data) {
+               var data1 = JSON.parse(data)
+
+               $('#setupTable').dataTable({
+                   data: data1,
+                   'sort': false,
+                   'searching': false	,
+                   'paging': false,
+                   'bInfo': false,
+                   stripeClasses:[],
+                   columns: [
+                       {
+                           "data": "food_item_id",
+                           "visible": true,
+                           "mRender": function (data, type, full) {
+                               return '<input id="checkbx" type="checkbox" name="checkbx" value='+data+' style="width:50px;">';
+                           }
+                       },
+                       {'data': "food_item_name"},
+                       {'data': "price"},
+                       {
+                           "data": null,
+                           "mRender": function (data, type, full) {
+                               return '<input type= "text" name="Quantity" size="5" style="width:40px;" value="0" disabled>';
+                           }
+                       },
+                   ],
+               });//table
+           } //sucess
+       }); //ajax
+
+        $('#setupTable tbody').on('click', '#checkbx', function () {
+            var dataTable = $('#setupTable').dataTable();
+            var $row = $(this).closest('tr').first();
+            if($(this).is(':checked')) {
+                $row.find("td:nth-child(3),input").removeAttr('disabled');
+            }
+            else {
+                $row.find("td:nth-child(3),input").attr('disabled','disabled');
+            }
+            $row.find("td:nth-child(0),input").removeAttr('disabled');
+        });
+    });
+
+    </script>
+
+</head>
+     <body class="background">
+     <div  id="header">
+     <img class="logo" src="../static/Images/FinalHeaderImage.png" alt="Foodies Logo" align="left">
+     </div>
+     <div align="left">
+
+     <form id="form1" action="showAddToCart" method="post" style="width:1000px;" class="transbox">
+         <h1>{{ retid }} </h1>
+            <h3><u><i>Menu</i></u></h3>
+            <table  border="1" style="width: 100%;" name="setupTable" id="setupTable">
+            <thead>
+                <tr>
+                    <th width="5%"></th>
+                    <th width="50%">Food Item</th>
+                     <th width="25%">Unit Price</th>
+                    <th width="20%">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            </table>
+         <br/>
+         <div align="center">
+            <button class="btn" type="submit" >Add To Cart</button>
+         </div>
+      </form>
+     </div>
+</body>
+</html>

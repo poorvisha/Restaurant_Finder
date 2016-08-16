@@ -1,78 +1,109 @@
-.jumbotron {
-  background-image: url("pic.jpg");
-  color: 	white;
-background-size: cover;
-    height: 100px;
-padding-bottom: 400px;
-font-family : verdana;
-word-spacing: 3px;
-}
 
-.container-fluid {
-    padding: 60px 50px;
-	font-size : 20px
-}
+/* 
+    Created on : Aug 09, 2016
+    Author     : Ekta Khiani
+*/
+	form {
+		/* Just to center the form on the page */
+		margin: 20px 20px 20px 20px;
+		width: 500px;
+		/* To see the outline of the form */
+		padding: 1em;
+		border: 1px solid #CCC;
+		border-radius: 1em;
+	}
+	
+	button.btn {
+		width:150px;
+		height: 50px;
+		margin: 0;
+		padding: 0 20px;
+		vertical-align: middle;
+		background: firebrick;
+		border: 0;
+		font-family: 'Lucida Calligraphy';
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 50px;
+		color: #fff;
+		-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+		text-shadow: none;
+		-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+		-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+	}
 
-.team {
-padding: 80px 50px;
-}
+	button.btn:hover { opacity: 0.6; color: #fff; }
 
-.thumbnail {
-    padding: 0 0 15px 0;
-    border: none;
-    border-radius: 0;
-}
+	button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
 
-.thumbnail img {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
-}
+	button.btn:focus { outline: 0; opacity: 0.6; background: #19b9e7; color: #fff; }
 
-.cities{
-  padding-bottom: 150px;
-}
+	button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #19b9e7; color: #fff; }
 
+	
+	td { 
+		padding: 5px;
+	}
 
-.menu-bar {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    height: 14px;
-    margin-left: -10px;
-}
+	input[type="text"],
+	select,
+	textArea {
+		height: 40px;
+		margin: 0;
+		padding: 0 20px;
+		vertical-align: middle;
+		background: #fff;
+		border: 3px solid #fff;
+		font-family: 'Lucida Calligraphy';
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 40px;
+		color: #888;
+		-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+		-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+		-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+	}
 
-.bars {
-    display: block;
-    width: 20px;
-    height: 3px;
-    background-color: #333;
-    box-shadow: 0 5px 0 #333, 0 10px 0 #333;
-}
+	input {
+		width: 250px;
+	}
+	select {
+		width: 300px;
+		font-family: 'Lucida Calligraphy';
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 30px;
+		color: #888;
+	}
 
-.menu {
-    display: none;
-    width: 100%;
-    padding: 30px 10px 50px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: #fff;
-}
-.menu ul {
-    margin-bottom: 0;
-}
-.menu a {
-    color: #333;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
-.menu a:hover {
-    text-decoration: none;
-    opacity: 1;
-}
-.my-display{
-    display: inherit;
-}
-.my-hide{
-    display: none;
-}
+	textArea {
+		width: 250px!important;
+		height: 100px;
+		line-height: 30px;
+	}
+
+	body.background {
+		background: url(../static/Images/FinalBackgroundImage.png);
+		background-size:cover;
+		z-index: -1;
+	}
+
+	form.transbox {
+		margin: 30px;
+		background: rgba(0, 0, 0, 0.20);
+	}
+
+	h1 {
+		font-weight: 700;
+		color: #000000;
+	}
+
+	
+	h3 {
+		font-weight: 700;
+		color: #000000;
+		font-size: 22px;
+		font-style: italic;
+	}
+
+	

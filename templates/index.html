@@ -1,136 +1,36 @@
-{% extends "navbar.html" %}
-{% block content %}
-  <div class="jumbotron text-center">
-    <h1>Restaurant Finder</h1>
-    <div class="row">
-      <div class="col-sm-2 col-sm-offset-5">
-        <form name="city_selector" role="form" method="post">
-          {#          <select name="city" id="city" onchange="this.form.submit()" class="selectpicker">#}
-          <select name="city" id="city" class="selectpicker">
-            <option selected>Select a city...</option>
-            <option value="San Francisco" id="sf"> San Francisco</option>
-            <option value="San Jose" id="sj"> San Jose</option>
-            <option value="Las Vegas" id="lv"> Las Vegas</option>
-            <option value="Los Angeles" id="la"> Los Angeles</option>
-          </select> <br>
+<html>
+    <head>
+        <title>Foodies Home Page!</title>
+        <link href="../static/style.css" rel="stylesheet" type="text/css"/>
+        <link href="../static/headerfooter.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="background">
+        <div id="header">
+            <img class="logo" src="../static/Images/FinalHeaderImage.png" alt="RFLogo" align="left">
+        </div>
+        <div>
+            <br/>
+        <form name="city_list" action="/showRestaurant_List" METHOD ="POST" class="transbox" style="width:400px;">
+            <div align="center">
+                <table border="0">
+                    <tr><td>
+                        <select name="city" id="city">
+                            <option selected>Select a city...</option>
+                            <option value="San Francisco" id="sf"> San Francisco</option>
+                            <option value="San Jose" id="sm"> San Jose</option>
+                            <option value="Los Angeles" id="lv"> Los Angeles</option>
+                            <option value="Las Vegas" id="la"> Las Vegas</option>
+                            <option value="Oakland" id="ok"> Oakland</option>
+                            <option value="Sacramento" id="la"> Sacramento</option>
+                            <option value="San Diego" id="sd"> San Diego</option>
+                            <option value="Fresno" id="fr"> Fresno</option>
+                        </select>
+                    </td></tr>
+                    <tr><td align="center"><button class="btn" type="submit" style="width:225px;">Search Restaurants</button></td></tr>
+                </table>
+            </div>
         </form>
       </div>
-    </div>
-  </div>
+    </body>
 
-  <div class="container-fluid text-center bg-grey my-hide" id="sfPic">
-    <div class="row text-center">
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <p><a href="/res/4"><strong>Ryoko</strong></a></p>
-          <img src="../static/image/Frances.jpg" alt="Paris">
-
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <p><a href="/res/5"><strong>Seven Hills</strong></a></p>
-          <img src="../static/image/Patisserie.jpg" alt="Paris">
-
-
-        </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <p><a href="/res/6"><strong>PineCrest</strong></a></p>
-          <img src="../static/image/Sugarfoot.jpg" alt="Paris">
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid text-center bg-grey my-hide" id="sjPic">
-    <div class="row text-center">
-      <div class="col-sm-4">
-        <div class="thumbnail">
-
-          <p><a href="/res/1"><strong>Bhimas</strong></a></p>
-          <img src="../static/image/Frances.jpg" alt="Paris">
-
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-
-          <p><a href="/res/2"><strong>Paradise</strong></a></p>
-          <img src="../static/image/Patisserie.jpg" alt="Paris">
-
-        </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="thumbnail">
-
-          <p><a href="/res/3"><strong>Maggiano</strong></a></p>
-          <img src="../static/image/Sugarfoot.jpg" alt="Paris">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid text-center bg-grey my-hide" id="lvPic">
-    <div class="row text-center">
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <p><a href="/res/10"><strong>Lemongrass</strong></a></p>
-          <img src="../static/image/Sugarfoot.jpg" alt="Paris">
-
-
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <p><a href="/res/11"><strong>Del Frisco</strong></a></p>
-          <img src="../static/image/Frances.jpg" alt="Paris">
-
-
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <p><a href="/res/12"><strong>Eat</strong></a></p>
-          <img src="../static/image/Patisserie.jpg" alt="Paris">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid text-center bg-grey my-hide" id="laPic">
-    <div class="row text-center">
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <p><a href="/res/7"><strong>Daikokuya</strong></a></p>
-          <img src="../static/image/Frances.jpg" alt="Paris">
-
-
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <p><a href="/res/8"><strong>Habayit</strong></a></p>
-          <img src="../static/image/Patisserie.jpg" alt="Paris">
-
-
-        </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <p><a href="/res/9"><strong>Spitz</strong></a></p>
-          <img src="../static/image/Sugarfoot.jpg" alt="Paris">
-        </div>
-      </div>
-    </div>
-  </div>
-
-{% endblock %}
+</html>

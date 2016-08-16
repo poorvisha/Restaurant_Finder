@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant</title>
+    <script src="../static/jquery-3.1.0.min.js"></script>
+    <script src="../static/jquery.dataTables.min.js"></script>
+    <link href="../static/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/headerfooter.css" rel="stylesheet" type="text/css"/>
+
+    <script>
+    var selectedCity;
+    selectedCity= "{{ city }}";
+   $(function() {
+       $.ajax({
+           type: 'GET',
+           url: 'restaurant_list',
+           data: {city: selectedCity},
+           success: function (data) {
+               var data1 = JSON.parse(data);
+               $('#resListTable').dataTable({
+                   data: data1,
+                   'sort': false,
+                   'searching': false,
+                   'paging': false,
+                   'bInfo': false,
+                   stripeClasses: [],
+                   columns: [
+                       {
+                           "data": "restaurant_name",
+                       },
+                       {
+                           'data': "cuisine"
+                       },
+                       {
+                           "data": "restaurant_address1"
+                       },
+                       {
+                           "data": "contact_number"
+                       },
+                       {
+                           "data": "rest_id",
+                           "visible": true,
+                           "mRender": function (data, type, full) {
+                               return '<a href="/showRestaurant_Menu?restid='+data+'">View Menu</a>';
+                           }
+                       },
+                   ]
+               });
+           }
+               /*tr = $('<tr/>');
+               tr.append('<th>'+"Restaurant Name" + '</th>');
+               tr.append('<th>'+"Cuisine" + '</th>');
+               tr.append('<th colspan="2"> '+"Restaurant Address" + '</th>');
+               tr.append('<th>'+"Contact" + '</th>');
+               $('table').append(tr);
+
+            for (var i = 0; i < data1.length; i++) {
+                console.log('inside');
+                tr = $('<tr/>');
+                tr.append('<td>' + '<a href="/showRestaurant_Menu?restid='+data1[i].rest_id+'&restname='+data1[i].restaurant_name+'">'+data1[i].restaurant_name+'</a>' + "</td>");
+                tr.append('<td>'+ data1[i].cuisine +'</td>');
+                tr.append('<td>'+ data1[i].restaurant_address1 +'</td>');
+                tr.append('<td>'+ data1[i].restaurant_address2 +'</td>');
+                tr.append('<td>'+ data1[i].contact_number +'</td>');
+                $('table').append(tr);
+            }*/
+
+       });
+   });
+
+</script>
+
+
+</head>
+
+    <body class="background">
+        <div  id="header">
+            <img class="logo" src="../static/Images/FinalHeaderImage.png" alt="ITU Logo" align="left">
+         </div>
+         <form class="transbox" style="width:1000px;">
+             <H1>Restaurants</H1>
+            <table  border="1"  name="resListTable" id="resListTable" style="width:100%">
+                <thead>
+                <tr>
+                    <th width="7%">Restaurant Name</th>
+                    <th width="5%">Cuisine</th>
+                    <th width="15%">Address</th>
+                    <th width="5%">Contact</th>
+                    <th width="5%"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            </table>
+         </form>
+    </body>
+
+</html>

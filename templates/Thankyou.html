@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanks You!</title>
+    <link href="../static/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/headerfooter.css" rel="stylesheet" type="text/css"/>
+</head>
+    <body class="background">
+        <div  id="header">
+             <img class="logo" src="../static/Images/FinalHeaderImage.png"  alt="Foodie Logo" align="left">
+        </div>
+        <form action="addCustomerDetail" method="post" id="formid" class="transbox" style="width:700px;">
+            <div align="center">
+                <h2>Thank you! Your order has been placed successfully <br> Your order number is {{ customerid }}.</h2>
+            </div>
+        </form>
+    </body>
+</html>
